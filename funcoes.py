@@ -87,18 +87,40 @@ def posiciona_frota(dic_frota):
 ### QUESTAO 5 ###
 
 
-def afundados(frota, tabuleiro):
+# def afundados(frota, tabuleiro):
 
+#     navios_afundados = 0
+
+#     for navios in frota.values():
+#         for navio in navios:
+#             afundado = True
+#             for posicao in navio:
+#                 linha, coluna = posicao
+#                 if tabuleiro[linha][coluna] != 'X':  
+#                     break
+#             if afundado:
+#                 navios_afundados += 1  
+
+#     return navios_afundados
+
+
+def afundados(frota, tabuleiro):
     navios_afundados = 0
 
+    # Itera sobre todos os navios na frota
     for navios in frota.values():
+        # Para cada navio na frota, verifica suas posições
         for navio in navios:
             afundado = True
+            # Verifica cada posição do navio no tabuleiro
             for posicao in navio:
                 linha, coluna = posicao
+                # Verifica se todas as posições estão marcadas como 'X'
                 if tabuleiro[linha][coluna] != 'X':  
+                    afundado = False
                     break
             if afundado:
-                navios_afundados += 1  
+                navios_afundados += 1  # Conta o navio como afundado apenas uma vez
 
     return navios_afundados
+
