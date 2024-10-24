@@ -86,41 +86,44 @@ def posiciona_frota(dic_frota):
 
 ### QUESTAO 5 ###
 
-
-# def afundados(frota, tabuleiro):
-
-#     navios_afundados = 0
-
-#     for navios in frota.values():
-#         for navio in navios:
-#             afundado = True
-#             for posicao in navio:
-#                 linha, coluna = posicao
-#                 if tabuleiro[linha][coluna] != 'X':  
-#                     break
-#             if afundado:
-#                 navios_afundados += 1  
-
-#     return navios_afundados
-
-
 def afundados(frota, tabuleiro):
+
     navios_afundados = 0
 
-    # Itera sobre todos os navios na frota
     for navios in frota.values():
-        # Para cada navio na frota, verifica suas posições
         for navio in navios:
             afundado = True
-            # Verifica cada posição do navio no tabuleiro
             for posicao in navio:
                 linha, coluna = posicao
-                # Verifica se todas as posições estão marcadas como 'X'
                 if tabuleiro[linha][coluna] != 'X':  
                     afundado = False
                     break
             if afundado:
-                navios_afundados += 1  # Conta o navio como afundado apenas uma vez
+                navios_afundados += 1  
 
     return navios_afundados
 
+
+
+
+### QUESTAO 6 ###
+
+def posicao_valida(frota, linha, coluna, orientacao, tamanho):
+
+    tamanho_tabuleiro = 10
+    
+    posicoes_navio = define_posicoes(linha, coluna, orientacao, tamanho)
+
+    for posicao in posicoes_navio:
+        linha_pos, coluna_pos = posicao
+        if linha_pos < 0 or linha_pos >= tamanho_tabuleiro or coluna_pos < 0 or coluna_pos >= tamanho_tabuleiro:
+            return False  # Fora dos limites do tabuleiro
+
+
+    for navios in frota.values():
+        for navio in navios:
+            for posicao_ocupada in navio:
+                if posicao_ocupada in posicoes_navio:
+                    return False  # Posição já ocupada por outro navio
+
+    return True  
