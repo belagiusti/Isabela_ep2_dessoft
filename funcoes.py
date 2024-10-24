@@ -37,6 +37,7 @@ def preenche_frota (frota, nome_navio, linha, coluna, orientacao, tamanho):
 
 
 ### QUESTAO 3 ###
+
 def faz_jogada (tabuleiro, linha, coluna):
 
     posicao = tabuleiro[linha][coluna]
@@ -47,3 +48,33 @@ def faz_jogada (tabuleiro, linha, coluna):
     
     return tabuleiro 
 
+
+
+
+
+### QUESTAO 3 ###
+
+def posiciona_frota(dic_frota):
+
+    tabuleiro = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+]
+
+
+    for navio, lista in dic_frota.items():
+        for l2 in lista:
+            for l3 in l2:
+                linha = l3[0]
+                coluna = l3[1]
+                tabuleiro[linha][coluna] = '1'
+        
+    return tabuleiro 
