@@ -75,6 +75,6 @@ def posiciona_frota(dic_frota):
             for l3 in l2:
                 linha = l3[0]
                 coluna = l3[1]
-                tabuleiro[linha][coluna] = '1'
+                tabuleiro[linha][coluna] = 1
         
     return tabuleiro 
