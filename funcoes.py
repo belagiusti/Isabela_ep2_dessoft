@@ -1,3 +1,5 @@
+### QUESTAO 1 ###
+
 def define_posicoes(linha, coluna, orientacao, tamanho):
 
     posicao_navio = [[linha, coluna]] 
@@ -14,6 +16,9 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
 
 
 
+
+### QUESTAO 2 ###
+
 def preenche_frota (frota, nome_navio, linha, coluna, orientacao, tamanho):
 
     posicao = define_posicoes(linha, coluna, orientacao, tamanho)
@@ -26,3 +31,19 @@ def preenche_frota (frota, nome_navio, linha, coluna, orientacao, tamanho):
                 l.append(posicao)
     
     return frota
+
+
+
+
+
+### QUESTAO 3 ###
+def faz_jogada (tabuleiro, linha, coluna):
+
+    posicao = tabuleiro[linha][coluna]
+    if posicao == 1:
+        tabuleiro[linha][coluna] = 'X'
+    else:
+        tabuleiro[linha][coluna] = '-'
+    
+    return tabuleiro 
+
