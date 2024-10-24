@@ -52,7 +52,8 @@ def faz_jogada (tabuleiro, linha, coluna):
 
 
 
-### QUESTAO 3 ###
+
+### QUESTAO 4 ###
 
 def posiciona_frota(dic_frota):
 
@@ -78,3 +79,26 @@ def posiciona_frota(dic_frota):
                 tabuleiro[linha][coluna] = 1
         
     return tabuleiro 
+
+
+
+
+
+### QUESTAO 5 ###
+
+
+def afundados(frota, tabuleiro):
+
+    navios_afundados = 0
+
+    for navios in frota.values():
+        for navio in navios:
+            afundado = True
+            for posicao in navio:
+                linha, coluna = posicao
+                if tabuleiro[linha][coluna] != 'X':  
+                    break
+            if afundado:
+                navios_afundados += 1  
+
+    return navios_afundados
