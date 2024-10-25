@@ -22,7 +22,7 @@ embarcacoes = {
 for nome_navio, (tamanho, quantidade) in embarcacoes.items():
     for i in range(quantidade):
         while True:
-            print(f"\nInsira as informações referentes ao navio {nome_navio} que possui tamanho {tamanho}")
+            print(f"Insira as informações referentes ao navio {nome_navio} que possui tamanho {tamanho}")
             linha = int(input("Linha: "))
             coluna = int(input("Coluna: "))
 
