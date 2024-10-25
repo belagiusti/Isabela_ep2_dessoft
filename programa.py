@@ -36,7 +36,7 @@ for nome_navio, (tamanho, quantidade) in embarcacoes.items():
                 frota = preenche_frota(frota, nome_navio, linha, coluna, orientacao, tamanho)
                 break
             else:
-                print("Esta posição não está válida! Tente novamente.")
+                print("Esta posição não está válida!")
 
 print (frota)
 
